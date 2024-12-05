@@ -124,20 +124,7 @@ class _HomePageState extends State<HomePage> {
           SizedBox(height: 40),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextButton(
-                onPressed: () {
-                  print("تم الضغط على التواصل مع الإدارة");
-                },
-                child: Text(
-                  'هل تواجه مشكلة؟',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              SizedBox(width: 8),
+            children: [SizedBox(width: 8),
               TextButton(
                 onPressed: () {
                   print("تم الضغط على التواصل مع الإدارة");
@@ -150,6 +137,20 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
+              
+              TextButton(
+                onPressed: () {
+                  print("تم الضغط على التواصل مع الإدارة");
+                },
+                child: Text(
+                  'هل تواجه مشكلة؟',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              
             ],
           ),
           Padding(
