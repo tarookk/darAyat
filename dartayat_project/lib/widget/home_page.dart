@@ -14,7 +14,10 @@ class HomePage extends StatelessWidget {
               height: 200,
               width: double.infinity,
               color: Color(0xffAE9453),
-              child: Image.asset('asset/image.png',height: 20,width: 20,),
+              child: Padding(
+                padding: const EdgeInsets.all(30.0),
+                child: Image.asset('asset/image.png',height: 20,width: 20,),
+              ),
                
               
             )
