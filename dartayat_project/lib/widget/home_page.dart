@@ -20,10 +20,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String userName = ""; // لتخزين اسم المستخدم
-  String userCode = ""; // لتخزين كود التعريف
+  String userName = "";
+  String userCode = "";
 
-  // دالة لإظهار نافذة إدخال النص
   void showInputDialog(BuildContext context, String title, Function(String) onSave) {
     TextEditingController controller = TextEditingController();
 
@@ -38,13 +37,13 @@ class _HomePageState extends State<HomePage> {
         actions: [
           TextButton(
             onPressed: () {
-              onSave(controller.text); // حفظ النص المُدخل
-              Navigator.pop(context); // إغلاق النافذة
+              onSave(controller.text);
+              Navigator.pop(context);
             },
             child: Text("حفظ"),
           ),
           TextButton(
-            onPressed: () => Navigator.pop(context), // إغلاق بدون حفظ
+            onPressed: () => Navigator.pop(context),
             child: Text("إلغاء"),
           ),
         ],
@@ -55,10 +54,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     
       body: Column(
         children: [
-          // الصندوق العلوي مع الصورة
           Container(
             height: 200,
             width: double.infinity,
@@ -72,9 +69,11 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          SizedBox(height: 20), // مسافة بين الصندوق والمحتوى التالي
-
-          // زر لإدخال اسم المستخدم
+          Padding(
+            padding: const EdgeInsets.only(top: 10, left: 200),
+            child: Text('تسجيل الدخول', style: TextStyle(color: Colors.black, fontSize: 22)),
+          ),
+          SizedBox(height: 100),
           ElevatedButton(
             onPressed: () {
               showInputDialog(
@@ -82,26 +81,23 @@ class _HomePageState extends State<HomePage> {
                 "أدخل اسم المستخدم",
                 (text) {
                   setState(() {
-                    userName = text; // حفظ اسم المستخدم
+                    userName = text;
                   });
                 },
               );
             },
             style: ElevatedButton.styleFrom(
-             // لون النص
-              shape: RoundedRectangleBorder( // زوايا مستديرة
+              foregroundColor: Colors.black,
+              shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),
               ),
-              padding: EdgeInsets.symmetric(horizontal: 120, vertical: 20), // تعديل الحجم
-              shadowColor: Colors.black.withOpacity(0.3), // تأثير الظل
-              elevation: 5, // تأثير الظل عند الضغط
+              padding: EdgeInsets.symmetric(horizontal: 120, vertical: 20),
+              shadowColor: Colors.black.withOpacity(0.3),
+              elevation: 5,
             ),
             child: Text(userName.isEmpty ? "أدخل اسم المستخدم" : "اسم المستخدم: $userName"),
           ),
-
-          SizedBox(height: 20), // مسافة بين الزرين
-
-          // زر لإدخال كود التعريف
+          SizedBox(height: 40),
           ElevatedButton(
             onPressed: () {
               showInputDialog(
@@ -109,48 +105,41 @@ class _HomePageState extends State<HomePage> {
                 "أدخل كود التعريف",
                 (text) {
                   setState(() {
-                    userCode = text; // حفظ كود التعريف
+                    userCode = text;
                   });
                 },
               );
             },
             style: ElevatedButton.styleFrom(
-              // لون النص
-              shape: RoundedRectangleBorder( // زوايا مستديرة
+              foregroundColor: Colors.black,
+              shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),
               ),
-              padding: EdgeInsets.symmetric(horizontal: 120, vertical: 20), // تعديل الحجم
-              shadowColor: Colors.black.withOpacity(0.3), // تأثير الظل
-              elevation: 5, // تأثير الظل عند الضغط
+              padding: EdgeInsets.symmetric(horizontal: 120, vertical: 20),
+              shadowColor: Colors.black.withOpacity(0.3),
+              elevation: 5,
             ),
             child: Text(userCode.isEmpty ? "أدخل كود التعريف" : "كود التعريف: $userCode"),
           ),
-          SizedBox(height: 20), // مسافة بين النص وزر "تواصل مع الإدارة"
-
-          // سطر يحتوي على النص "هل تواجه مشكلة؟" وزر "تواصل مع الإدارة"
+          SizedBox(height: 40),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // النص
               TextButton(
                 onPressed: () {
-                  // أكشن عند الضغط على الزر
                   print("تم الضغط على التواصل مع الإدارة");
                 },
                 child: Text(
-                 'هل توجه مشكله؟',
+                  'هل تواجه مشكلة؟',
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
-              SizedBox(width: 8), // مسافة صغيرة بين النص والزر
-
-              // زر "تواصل مع الإدارة"
+              SizedBox(width: 8),
               TextButton(
                 onPressed: () {
-                  // أكشن عند الضغط على الزر
                   print("تم الضغط على التواصل مع الإدارة");
                 },
                 child: Text(
@@ -163,22 +152,24 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           ),
-          ElevatedButton(
-            onPressed: () {
-              // أكشن عند الضغط على الزر "تسجيل"
-              print("تم الضغط على تسجيل");
-            },
-            style: ElevatedButton.styleFrom(
-disabledBackgroundColor: Colors.black,
-               // لون النص
-              shape: RoundedRectangleBorder( // زوايا مستديرة
-                borderRadius: BorderRadius.circular(15),
+          Padding(
+            padding: const EdgeInsets.only(top: 60),
+            child: ElevatedButton(
+              onPressed: () {
+                print("تم الضغط على تسجيل");
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color.fromARGB(255, 210, 180, 104),
+                disabledBackgroundColor: Colors.black,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                padding: EdgeInsets.symmetric(horizontal: 60, vertical: 15),
+                shadowColor: Colors.black.withOpacity(0.3),
+                elevation: 5,
               ),
-              padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15), // تعديل الحجم
-              shadowColor: Colors.black.withOpacity(0.3), // تأثير الظل
-              elevation: 5, // تأثير الظل عند الضغط
+              child: Text("تسجيل", style: TextStyle(color: const Color.fromARGB(255, 251, 248, 248), fontSize: 15, fontWeight: FontWeight.bold)),
             ),
-            child: Text("تسجيل",style: TextStyle(color: Colors.black),),
           ),
         ],
       ),
