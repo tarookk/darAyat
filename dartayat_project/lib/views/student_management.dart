@@ -28,7 +28,7 @@ class StudentManagement extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
+               const SizedBox(
                   height: 12,
                 ),
                 Row(
@@ -37,14 +37,14 @@ class StudentManagement extends StatelessWidget {
                     // طااااااااااااااااااااااارق اكتب في onPressed:
                     TextButton(
                         onPressed: () {},
-                        child: Text(
+                        child:const Text(
                           "اضافة",
                           style: TextStyle(
                               color: Color(0xff5A5353),
                               fontWeight: FontWeight.bold,
                               fontSize: 12),
                         )),
-                    Text(
+                   const Text(
                       "ادارة الطلاب",
                       style: TextStyle(
                           color: Colors.black,
@@ -53,11 +53,11 @@ class StudentManagement extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(
+               const SizedBox(
                   height: 12,
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 30),
+               const Padding(
+                  padding:  EdgeInsets.only(bottom: 30),
                   child: ListOfStudents(),
                 )
               ],
@@ -77,12 +77,12 @@ class ListOfStudents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 10, right: 12, left: 12),
+      padding:const EdgeInsets.only(top: 10, right: 12, left: 12),
       decoration: BoxDecoration(
           color: Colors.white, borderRadius: BorderRadius.circular(15)),
       child: Column(
         children: [
-          Row(
+        const  Row(
             children: [
               Expanded(
                 flex: 1,
@@ -110,16 +110,16 @@ class ListOfStudents extends StatelessWidget {
               )
             ],
           ),
-          Divider(),
+         const Divider(),
           ListView.separated(
-              separatorBuilder: (context, index) => Divider(
+              separatorBuilder: (context, index) => const Divider(
                     color: Colors.grey,
                   ),
               itemCount: 40,
-              physics: NeverScrollableScrollPhysics(),
+              physics:const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemBuilder: (context, index) {
-                return Expanded(
+                return const Expanded(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
