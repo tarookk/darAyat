@@ -1,3 +1,4 @@
+import 'package:dartayat_project/views/student_management.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -23,7 +24,8 @@ class _HomePageState extends State<HomePage> {
   String userName = "";
   String userCode = "";
 
-  void showInputDialog(BuildContext context, String title, Function(String) onSave) {
+  void showInputDialog(
+      BuildContext context, String title, Function(String) onSave) {
     TextEditingController controller = TextEditingController();
 
     showDialog(
@@ -71,7 +73,8 @@ class _HomePageState extends State<HomePage> {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 10, left: 200),
-            child: Text('تسجيل الدخول', style: TextStyle(color: Colors.black, fontSize: 22)),
+            child: Text('تسجيل الدخول',
+                style: TextStyle(color: Colors.black, fontSize: 22)),
           ),
           SizedBox(height: 100),
           ElevatedButton(
@@ -95,7 +98,9 @@ class _HomePageState extends State<HomePage> {
               shadowColor: Colors.black.withOpacity(0.3),
               elevation: 5,
             ),
-            child: Text(userName.isEmpty ? "أدخل اسم المستخدم" : "اسم المستخدم: $userName"),
+            child: Text(userName.isEmpty
+                ? "أدخل اسم المستخدم"
+                : "اسم المستخدم: $userName"),
           ),
           SizedBox(height: 40),
           ElevatedButton(
@@ -119,7 +124,9 @@ class _HomePageState extends State<HomePage> {
               shadowColor: Colors.black.withOpacity(0.3),
               elevation: 5,
             ),
-            child: Text(userCode.isEmpty ? "أدخل كود التعريف" : "كود التعريف: $userCode"),
+            child: Text(userCode.isEmpty
+                ? "أدخل كود التعريف"
+                : "كود التعريف: $userCode"),
           ),
           SizedBox(height: 40),
           Row(
@@ -158,6 +165,11 @@ class _HomePageState extends State<HomePage> {
             child: ElevatedButton(
               onPressed: () {
                 print("تم الضغط على تسجيل");
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => StudentManagement(),
+                    ));
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color.fromARGB(255, 210, 180, 104),
@@ -169,7 +181,11 @@ class _HomePageState extends State<HomePage> {
                 shadowColor: Colors.black.withOpacity(0.3),
                 elevation: 5,
               ),
-              child: Text("تسجيل", style: TextStyle(color: const Color.fromARGB(255, 251, 248, 248), fontSize: 15, fontWeight: FontWeight.bold)),
+              child: Text("تسجيل",
+                  style: TextStyle(
+                      color: const Color.fromARGB(255, 251, 248, 248),
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold)),
             ),
           ),
         ],
