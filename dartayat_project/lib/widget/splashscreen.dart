@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   _navigateToHome() async {
-    await Future.delayed(Duration(seconds: 50));
+    await Future.delayed(Duration(seconds: 4));
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(builder: (context) => HomePage()),
@@ -38,17 +38,25 @@ class _SplashScreenState extends State<SplashScreen> {
           ),
         ),
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              
-              SizedBox(height: 20),
-              Image.asset(
-                'asset/image.png',
-                height: 150,
-                width: 150
-              ),
-            ],
+          child: Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+            
+              children: [
+           
+                
+                
+                SizedBox(height: 20),
+                Center(
+                  child: Image.asset(
+                    'asset/image.png',
+                    height: 150,
+                    width: 150
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
