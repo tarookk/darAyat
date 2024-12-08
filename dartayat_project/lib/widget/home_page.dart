@@ -9,8 +9,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: HomePage(
+        
+      ),
     );
   }
 }
@@ -66,15 +69,15 @@ class _HomePageState extends State<HomePage> {
               height: 200,
               width: double.infinity,
               color: Color(0xffAE9453),
-              child: Padding(
-                padding: const EdgeInsets.all(30.0),
-                child: Image.asset(
-                  'asset/image.png',
-                  height: 100,
-                  width: 100,
+              child: 
+            
+                 Image.asset(
+                  'asset/Frame 3.png',
+                  height: double.infinity,
+                  width: double.infinity,
                 ),
               ),
-            ),
+            
             Padding(
               padding: const EdgeInsets.only(top: 10, left: 200),
               child: Text('تسجيل الدخول',
