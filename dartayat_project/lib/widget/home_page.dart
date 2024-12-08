@@ -72,7 +72,7 @@ class _HomePageState extends State<HomePage> {
               child: 
             
                  Image.asset(
-                  'asset/Frame 3.png',
+                  'asset/Frame 3.png', fit: BoxFit.cover, 
                   height: double.infinity,
                   width: double.infinity,
                 ),

@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   _navigateToHome() async {
-    await Future.delayed(Duration(seconds: 50));
+    await Future.delayed(Duration(seconds: 4));
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(builder: (context) => HomePage()),
@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
         height: double.infinity,
         child: Image.asset(
           'asset/splashscreen.png',
-          fit: BoxFit.cover, // اجعل الصورة تملأ الشاشة بالكامل
+          fit: BoxFit.cover, 
         ),
       ),
     );
