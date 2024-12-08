@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   _navigateToHome() async {
-    await Future.delayed(Duration(seconds: 4));
+    await Future.delayed(Duration(seconds: 50));
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(builder: (context) => HomePage()),
@@ -27,37 +27,9 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color(0xFF4A2500), // اللون البني الداكن
-              Color(0xFFAE9453), // اللون الذهبي الفاتح
-            ],
-          ),
-        ),
-        child: Center(
-          child: Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-            
-              children: [
-           
-                
-                
-                SizedBox(height: 20),
-                Center(
-                  child: Image.asset(
-                    'asset/image.png',
-                    height: 150,
-                    width: 150
-                  ),
-                ),
-              ],
-            ),
-          ),
+        child: Image.asset(
+          'asset/splashscreen.png',
+          fit: BoxFit.cover, // اجعل الصورة تملأ الشاشة بالكامل
         ),
       ),
     );
